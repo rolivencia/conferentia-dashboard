@@ -1,0 +1,52 @@
+{
+  "npmScope": "conferentia",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "accessToken": "Y2QwNGY1MWUtNDY1Ny00NzJlLTkwYjEtOGMxOTBhYTM2ZGMzfHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "api": {
+      "tags": []
+    },
+    "api-interfaces": {
+      "tags": []
+    },
+    "conferentia": {
+      "tags": []
+    },
+    "conferentia-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "conferentia"
+      ]
+    }
+  }
+}
